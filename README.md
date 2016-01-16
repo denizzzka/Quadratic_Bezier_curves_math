@@ -15,6 +15,7 @@ S (start) — начальная опорная (узловая) точка (t=0
 С (control) — управляющая точка (direction point);
 E (end) — конечная опорная (узловая) точка (t=1) (anchor point).
 </pre>
+
 Этот код может делать:
 
 * Подсчёт площади фигуры, ограниченной данной кривой
@@ -28,7 +29,7 @@ E (end) — конечная опорная (узловая) точка (t=1) (a
 * Найти "габаритный ящик" кривой
 * Найти длину кривой
 * Деление кривой на две кривые в заданной точке
-* Поиск пересечения двух парабол
+* Поиск пересечений двух парабол
 
 
 (EN) Quadratic Bezier curve
@@ -47,4 +48,4 @@ This code can do:
 * Find "bounding box"
 * Find the length of the curve
 * The division of the curve at the predetermined point into two curves
-* Search the intersection of two parabolas
+* Find intersections of two parabolas
