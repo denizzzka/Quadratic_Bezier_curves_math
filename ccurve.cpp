@@ -61,50 +61,6 @@ Scalar CCurve::CalculateArea() const
 }
 
 
-void CCurve::display() const
-{
-
-    // получим "векторизацию" кривой
-    unsigned num_steps = static_cast<unsigned>( (direction.length() + curvature.length()) * 3 ) + 2; // FIXME округление может сделать?
-    VectorsList* line = ConvertToVectors( num_steps );
-
-    VectorsList::iterator i = line->begin();
-    VectorsList::iterator end2 = line->end();
-
-    glColor(color);
-    glLineWidth( 2.0f );
-    glBegin( GL_LINE_STRIP ); // ломанная линия
-
-    glVertex2f( 0.0, 0.0 ); // первая линия
-
-    while ( i != end2 ) {
-      glVertex2f( i->val.x, i->val.y );
-      i++;
-    }
-
-    glEnd();
-    glLineWidth ( 1.0 );
-
-    // проставим ограничительные точки в начале и конце ломанной
-    if( DisplayDots ) {
-
-        glPointSize( 4.0 );
-        glColor(ColorCurveDots);
-
-        glBegin(GL_POINTS);
-          glVertex2f( 0.0, 0.0 );
-          glVertex2f( direction.val.x, direction.val.y );
-        glEnd();
-
-        glPointSize( 1.0 );
-
-    }
-
-    delete line;
-
-}
-
-
 /**
    @brief Поиск векторов, приблизительно составляющих кривую.
 

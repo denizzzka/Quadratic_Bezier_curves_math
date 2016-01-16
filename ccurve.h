@@ -2,7 +2,6 @@
 #define CCURVE_H
 
 #include "../math/vector2d.h"
-#include "../gl_functions.h"
 #include <list>
 #include "geometry.h"
 #include "cgeom.h"
@@ -32,9 +31,6 @@
 
 class CCurve : public CGeom
 {
-
-    Color color; ///< Цвет кривой ;)
-
 public:
     Vector2D direction; ///< Направление кривой (direction vector)
     Vector2D curvature; ///< Кривизна кривой (control vector)
@@ -52,14 +48,8 @@ public:
 	/// Подсчитать емкость момента инерции ( чтобы получить момент нужно домножить на плотность )
 	Scalar CalcMomentOfInertiaCapacity( Vector2D* axis = 0 ) const;
 
-    /// Отобразить кривую средствами OpenGL
-    void display() const;
-
     /// Аппорксимирует кривую в набор точек
     VectorsList* ConvertToVectors( unsigned num_steps ) const;
-
-    /// Фраг включения отображения начальной и конечной точек кривой
-    bool DisplayDots;
 
     /// Устанавливает цвет отображения данной кривой
     inline void setColor (const Color color) { CCurve::color = color; }
