@@ -31,6 +31,7 @@ E (end) — конечная опорная (узловая) точка (t=1) (a
 * Деление кривой на две кривые в заданной точке
 * Поиск пересечений двух парабол
 
+Код не является библиотекой и не предназначен для непосредственного использования - это просто кусок моего старого проекта.
 
 (EN) Quadratic Bezier curve
 ====
@@ -49,3 +50,5 @@ This code can do:
 * Find the length of the curve
 * The division of the curve at the predetermined point into two curves
 * Find intersections of two parabolas
+
+The code is not a library, and is not intended for direct use - it's just a piece of my old project.
